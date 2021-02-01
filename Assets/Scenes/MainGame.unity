@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 39697941}
   - component: {fileID: 39697943}
   - component: {fileID: 39697942}
+  - component: {fileID: 39697944}
   m_Layer: 5
   m_Name: Background_Image
   m_TagString: Untagged
@@ -195,6 +196,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39697940}
   m_CullTransparentMesh: 0
+--- !u!114 &39697944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39697940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  semiconductor: {fileID: 0}
+  electronics: {fileID: 1938871719}
+  exclamationMark_Text: {fileID: 2019811906}
+  changingSprite: {fileID: 0}
+  semiconductorRigidbody2D: {fileID: 476372192}
 --- !u!1 &45274963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
@@ -219,6 +237,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457e6f63989a9d64cbdcbe852fc9bdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &45274966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45274963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  semiconductor: {fileID: 0}
+  electronics: {fileID: 1787503049}
+  exclamationMark_Text: {fileID: 54309336}
+  changingSprite: {fileID: 21300000, guid: 7b06078068e9cd041965c9459cb3e538, type: 3}
+  semiconductorRigidbody2D: {fileID: 1098034340}
 --- !u!1 &54309335
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +266,7 @@ GameObject:
   - component: {fileID: 54309337}
   - component: {fileID: 54309336}
   m_Layer: 5
-  m_Name: ExclamationMark_Text(1)
+  m_Name: TVExclamationMark_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,18 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0830b40b5eb62a4fb989c203ee66172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tvSemiconductor: {fileID: 45274963}
-  smartphoneSemiconductor: {fileID: 458656622}
-  semiconductor2: {fileID: 2019811905}
-  tv: {fileID: 1787503049}
-  smartphone: {fileID: 1212560490}
-  gameConsole: {fileID: 1938871719}
-  exclamationMark_Text: {fileID: 791875688}
-  smartphoneSemiconductor_exclamationMark_Text: {fileID: 791875688}
-  exclamationMark_Text2: {fileID: 2019811906}
-  rigidbody2D: {fileID: 529017903990776216}
-  smartphoneSemiconductor_rigidbody2D1: {fileID: 529017903990776216}
-  rigidbody2D2: {fileID: 476372192}
 --- !u!58 &275262241
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -840,6 +863,23 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 529017903990776215}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &458656624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458656622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  semiconductor: {fileID: 458656622}
+  electronics: {fileID: 1212560490}
+  exclamationMark_Text: {fileID: 791875688}
+  changingSprite: {fileID: 21300000, guid: 63e4b5ff94d536a4a85013e6e98fdd76, type: 3}
+  semiconductorRigidbody2D: {fileID: 529017903990776216}
 --- !u!1001 &476372191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -960,7 +1000,7 @@ PrefabInstance:
     - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
       propertyPath: m_TagString
-      value: Semiconductor2
+      value: GameConsoleSemiconductor
       objectReference: {fileID: 0}
     - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
@@ -1447,6 +1487,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8990587585682301855, guid: 5498da7ca08172b468bd4aa00de84894, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5498da7ca08172b468bd4aa00de84894, type: 3}
+--- !u!50 &1098034340 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3278767190597569765, guid: 5498da7ca08172b468bd4aa00de84894,
+    type: 3}
+  m_PrefabInstance: {fileID: 1098034339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1212560490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dceb01a37059c4a408181756f863a6d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c2062831115c344292062dec7488a15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1655,7 +1701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 04ddcea2c7cbffd4f9893a3c47f40224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a1eb0aa4365bf54d9a5092be2a9430e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1729,7 +1775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4ce0e842d86dcfd4785c45e005ec4bd6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bb378fc506caa84ebe6101f9ef8d718, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1771,6 +1817,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2921e94da3d400b40aaf7a45e8789045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2014224981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014224978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  semiconductor: {fileID: 0}
+  electronics: {fileID: 1938871719}
+  exclamationMark_Text: {fileID: 2019811906}
+  changingSprite: {fileID: 21300000, guid: f4bc96fb1cba5c1409ce6c40ac0b09d3, type: 3}
+  semiconductorRigidbody2D: {fileID: 476372192}
 --- !u!1 &2019811905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1846,7 @@ GameObject:
   - component: {fileID: 2019811907}
   - component: {fileID: 2019811906}
   m_Layer: 5
-  m_Name: ExclamationMark_Text(2)
+  m_Name: GameConsoleExclamationMark_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1970,6 +2033,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: SmartphoneSemiconductor
+      objectReference: {fileID: 0}
+    - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6421339688115956387, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}

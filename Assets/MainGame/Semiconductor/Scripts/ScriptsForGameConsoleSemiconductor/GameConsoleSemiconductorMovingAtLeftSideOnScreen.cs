@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 概要：TVの半導体をランダムにTVの周りを移動するクラス
+/// 概要：ゲーム機の半導体をランダムに画面左側を移動するクラス
 /// </summary>
 /// <remarks>
 /// </remarks>
-public class TVSemiconductorMovingAroundTV : MonoBehaviour
+public class GameConsoleSemiconductorMovingAtLeftSideOnScreen : MonoBehaviour
 {
     #region フィールド
     /// <summary>
@@ -40,8 +40,8 @@ public class TVSemiconductorMovingAroundTV : MonoBehaviour
     /// </summary>
     void MoveSemiconductor()
     {
-        // 待機処理(WaitForSeconds)がされていない場合
-        if (this.isWaitForSeconds == false)
+        // 待機処理(WaitForSeconds)がされていないかつ「もとにもどれ！」吹き出しが半導体に当たっていない場合
+        if (this.isWaitForSeconds == false && BackToNormalOrder.flagToStopSemiconductorIfSpeechBalloonHit == false)
         {
             StartCoroutine(CoroutineMoveEnemyAtRandom());
         }
@@ -56,10 +56,10 @@ public class TVSemiconductorMovingAroundTV : MonoBehaviour
         // 何度もUpdateメソッドの中でStartCoroutine(CoroutineMoveEnemyAtRandom());を呼ばないようにする
         this.isWaitForSeconds = true;
 
-        // Enemyがランダムに移動する範囲(画面内)を半導体エリア内に設定
+        // Enemyがランダムに移動する範囲(画面左側)を半導体エリア内に設定
         UnityEngine.Random.InitState(System.DateTime.Now.Millisecond);
-        float xCoordinate = UnityEngine.Random.Range(-6.41f, -0.78f);
-        float yCoordinate = UnityEngine.Random.Range(3.22f, 0.35f);
+        float xCoordinate = UnityEngine.Random.Range(-0.6f, 9.86f);
+        float yCoordinate = UnityEngine.Random.Range(-5.0f, 4.86f);
 
         // 相手エリア内をランダムにワープして移動する
         Vector2 enemyRandomPosition = new Vector2(xCoordinate, yCoordinate);

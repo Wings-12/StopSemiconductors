@@ -41,7 +41,7 @@ public class SmartphoneSemiconductorMovingOnScreen : MonoBehaviour
     void MoveSemiconductor()
     {
         // 待機処理(WaitForSeconds)がされていないかつ「もとにもどれ！」吹き出しが半導体に当たっていない場合
-        if (this.isWaitForSeconds == false && BackToNormalOrder.smartphoneSemiconductorCollisionFlag == false)
+        if (this.isWaitForSeconds == false && BackToNormalOrder.flagToStopSemiconductorIfSpeechBalloonHit == false)
         {
             StartCoroutine(CoroutineMoveEnemyAtRandom());
         }

@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Semiconductor2
   - TVSemiconductor
   - SmartphoneSemiconductor
+  - GameConsoleSemiconductor
   layers:
   - Default
   - TransparentFX
