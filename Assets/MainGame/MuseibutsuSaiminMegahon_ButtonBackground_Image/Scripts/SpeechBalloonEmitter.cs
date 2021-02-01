@@ -25,6 +25,16 @@ public class SpeechBalloonEmitter : MonoBehaviour
     /// </remarks>
     bool isWaitForSeconds;
 
+    /// <summary>
+    /// AudioClipのインスタンス
+    /// </summary>
+    [SerializeField] AudioClip audioClip = default;
+
+    /// <summary>
+    /// AudioSourceのインスタンス
+    /// </summary>
+    [SerializeField] AudioSource audioSource = default;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +66,9 @@ public class SpeechBalloonEmitter : MonoBehaviour
 
         // 非アクティブにしてた「もとにもとれ！」メッセージボックスをアクティブに設定
         this.speechBalloon_Image.SetActive(true);
+
+        // 「もとにもとれ！」を流す
+        this.audioSource.PlayOneShot(this.audioClip);
 
         // コンマ数秒待機
         // ここでEnemyの動きが指定秒数止まる
