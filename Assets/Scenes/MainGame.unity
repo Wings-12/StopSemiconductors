@@ -233,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 45274963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457e6f63989a9d64cbdcbe852fc9bdb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 08e29eeffc8e3574d96091b4d97c0938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &45274966
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 45274963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
+  m_Script: {fileID: 11500000, guid: db2610a9d989ad84089998589e0fec15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   electronics: {fileID: 1787503049}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 54309338}
   - component: {fileID: 54309337}
   - component: {fileID: 54309336}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: TVExclamationMark_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139215909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07, y: -5.07, z: 90}
+  m_LocalPosition: {x: 1.25, y: -5.07, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -986,6 +986,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 458656622}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457e6f63989a9d64cbdcbe852fc9bdb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &458656625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458656622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1118,7 +1130,12 @@ PrefabInstance:
     - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6421339688115956387, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
@@ -1395,7 +1412,7 @@ GameObject:
   - component: {fileID: 791875687}
   - component: {fileID: 791875689}
   - component: {fileID: 791875688}
-  m_Layer: 4
+  m_Layer: 10
   m_Name: SmartphoneSemiconductor_ExclamationMark_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1655,6 +1672,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6421339688115956387, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
       propertyPath: m_Offset.y
@@ -1894,7 +1916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219268559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6310005, y: 0.9488783, z: 68.75234}
+  m_LocalPosition: {x: -4.75, y: -4.43, z: 68.75234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2069,7 +2091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1938871720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2159,7 +2181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2014224978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdc00a3b50791244a1f70e319aa43fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 6073da5be5c4f7b49b0d3f06a00125f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   electronics: {fileID: 1938871719}
@@ -2177,7 +2199,7 @@ GameObject:
   - component: {fileID: 2019811908}
   - component: {fileID: 2019811907}
   - component: {fileID: 2019811906}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: GameConsoleExclamationMark_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2374,7 +2396,7 @@ PrefabInstance:
     - target: {fileID: 529017903809800953, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
       propertyPath: m_Layer
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6421339688115956387, guid: 5498da7ca08172b468bd4aa00de84894,
         type: 3}
@@ -2401,7 +2423,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8990587585682301855, guid: 5498da7ca08172b468bd4aa00de84894, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5498da7ca08172b468bd4aa00de84894, type: 3}
 --- !u!50 &529017903990776216 stripped
 Rigidbody2D:

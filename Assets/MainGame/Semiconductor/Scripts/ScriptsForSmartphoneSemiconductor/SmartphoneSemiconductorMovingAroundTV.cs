@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// 概要：TVの半導体をランダムにTVの周りを移動するクラス
+/// 概要：スマホの半導体をランダムにTVの周りを移動するクラス
 /// </summary>
 /// <remarks>
 /// </remarks>
-public class TVSemiconductorMovingAroundTV : MonoBehaviour
+public class SmartphoneSemiconductorMovingAroundTV : MonoBehaviour
 {
     #region フィールド
     /// <summary>
@@ -41,16 +41,16 @@ public class TVSemiconductorMovingAroundTV : MonoBehaviour
     void MoveSemiconductor()
     {
         // 待機処理(WaitForSeconds)がされていないかつ「もとにもどれ！」吹き出しが半導体に当たっていない場合
-        if (this.isWaitForSeconds == false && BackToNormalOrder.flagToStopSemiconductorIfSpeechBalloonHit == false)
+        if (this.isWaitForSeconds == false && BackToNormalOrder.flagToStopSmartphoneSemiconductorIfSpeechBalloonHit == false)
         {
-            StartCoroutine(CoroutineMoveEnemyAtRandom());
+            StartCoroutine(CoroutineMoveSemiconductorAtRandom());
         }
     }
 
     /// <summary>
     /// ランダムで半導体エリア内を一定テンポでワープして移動する
     /// </summary>
-    IEnumerator CoroutineMoveEnemyAtRandom()
+    IEnumerator CoroutineMoveSemiconductorAtRandom()
     {
         // 待機処理(WaitForSeconds)が走っている場合はtrueにして
         // 何度もUpdateメソッドの中でStartCoroutine(CoroutineMoveEnemyAtRandom());を呼ばないようにする

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SemiconductorGoingBack : MonoBehaviour
+public class GameConsoleSemiconductorGoingBack : MonoBehaviour
 {
     /// <summary>
     /// 半導体の戻り先の電子機器
@@ -36,9 +36,7 @@ public class SemiconductorGoingBack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BackToNormalOrder.OnGoingBackToSmartphone += GoBackToElectronics;
-        BackToNormalOrder.OnGoingBackToTV += GoBackToElectronics;
-        BackToNormalOrder.OnGoingBackToGameConsole += GoBackToElectronics;
+        BackToNormalOrder.OnGoingBackToGameConsole += this.GoBackToElectronics;
 
         this.exclamationMark_Text.enabled = false;
 
@@ -57,11 +55,11 @@ public class SemiconductorGoingBack : MonoBehaviour
 
         if (this.isWaitForSeconds == false)
         {
-            StartCoroutine(CoroutineGoBackToEachElectronics(this.transform.position, this.electronics.transform.position, this.semiconductorRigidbody2D));
+            StartCoroutine(CoroutineGoBackToEachElectronics(this.transform.position, this.electronics.transform.position));
         }
     }
 
-    IEnumerator CoroutineGoBackToEachElectronics(Vector3 semiconductorPosition, Vector3 originalPosition, Rigidbody2D sericonductorRigidbocy2D)
+    IEnumerator CoroutineGoBackToEachElectronics(Vector3 semiconductorPosition, Vector3 originalPosition)
     {
         // 待機処理(WaitForSeconds)が走っている場合はtrueにして
         // 何度もUpdateメソッドの中でStartCoroutine(CoroutineMoveEnemyAtRandom());を呼ばないようにする
@@ -70,7 +68,7 @@ public class SemiconductorGoingBack : MonoBehaviour
         // 半導体がビックリしているため指定秒数止まる
         yield return new WaitForSeconds(1.0f);
 
-        GoBackToEachElectronics(semiconductorPosition, originalPosition, sericonductorRigidbocy2D);
+        GoBackToEachElectronics(semiconductorPosition, originalPosition);
 
         // 処理が終わったのでフラグを降ろす
         this.isWaitForSeconds = false;
@@ -84,7 +82,7 @@ public class SemiconductorGoingBack : MonoBehaviour
     /// 戻り値：なし
     /// 
     /// 備考：参考サイト：忘れた。
-    protected void GoBackToEachElectronics(Vector3 semiconductorPosition, Vector3 originalPosition, Rigidbody2D sericonductorRigidbocy2D)
+    protected void GoBackToEachElectronics(Vector3 semiconductorPosition, Vector3 originalPosition)
     {
         // 移動方向(°)
         float moveAngle = 0.0f;
@@ -102,7 +100,7 @@ public class SemiconductorGoingBack : MonoBehaviour
     /// 戻り値：なし
     /// 
     /// 備考：参考サイト：忘れた。
-    protected void StopSemiconductor(Vector3 semiconductorPosition, Vector3 originalPosition, Rigidbody2D sericonductorRigidbocy2D)
+    protected void StopSemiconductor(Vector3 semiconductorPosition, Vector3 originalPosition, Rigidbody2D semiconductorRigidbody2D)
     {
         // 各電子機器位置からの差
         float touchDif = 0.5f;
@@ -121,7 +119,7 @@ public class SemiconductorGoingBack : MonoBehaviour
             // ------------------------------------------------
 
             // 半導体の動きを停止する
-            sericonductorRigidbocy2D.velocity = Vector2.zero;
+            semiconductorRigidbody2D.velocity = Vector2.zero;
 
             // 半導体を電子機器の中に入れる
             Destroy(this.gameObject);

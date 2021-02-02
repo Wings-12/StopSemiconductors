@@ -12,7 +12,11 @@ public class BackToNormalOrder : MonoBehaviour
     /// <summary>
     /// 吹き出しが半導体に当たったら、半導体のランダム移動を止めるフラグ
     /// </summary>
-    public static bool flagToStopSemiconductorIfSpeechBalloonHit;
+    public static bool flagToStopGameConsoleSemiconductorIfSpeechBalloonHit;
+
+    public static bool flagToStopTVSemiconductorIfSpeechBalloonHit;
+
+    public static bool flagToStopSmartphoneSemiconductorIfSpeechBalloonHit;
 
     /// <summary>
     /// TVに戻るイベント
@@ -36,24 +40,32 @@ public class BackToNormalOrder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flagToStopSemiconductorIfSpeechBalloonHit = false;
+        flagToStopGameConsoleSemiconductorIfSpeechBalloonHit = false;
+        flagToStopTVSemiconductorIfSpeechBalloonHit = false;
+        flagToStopSmartphoneSemiconductorIfSpeechBalloonHit = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == tVSemiconductor)
         {
+            flagToStopTVSemiconductorIfSpeechBalloonHit = true;
+
             BackToNormal(collision.gameObject.tag);
         }
 
-        // タグが"SmartphoneSemiconductor"かつまだ「もとにもどれ！」吹き出し」と衝突していない場合
+        // タグが"SmartphoneSemiconductor"の場合
         if (collision.gameObject.tag == smartphoneSemiconductor)
         {
+            flagToStopSmartphoneSemiconductorIfSpeechBalloonHit = true;
+
             BackToNormal(collision.gameObject.tag);
         }
 
         if (collision.gameObject.tag == gameConsoleSemiconductor)
         {
+            flagToStopGameConsoleSemiconductorIfSpeechBalloonHit = true;
+
             BackToNormal(collision.gameObject.tag);
         }
     }
@@ -64,8 +76,6 @@ public class BackToNormalOrder : MonoBehaviour
     /// <param name="exclamationMark_Text">アクティブにするビックリマーク</param>
     void BackToNormal(string semiconductorName)
     {
-        flagToStopSemiconductorIfSpeechBalloonHit = true;
-
         if (OnGoingBackToSmartphone != null && semiconductorName == smartphoneSemiconductor)
         {
             OnGoingBackToSmartphone(this, EventArgs.Empty);

@@ -68,7 +68,8 @@ public class SpeechBalloonEmitter : MonoBehaviour
         this.speechBalloon_Image.SetActive(true);
 
         // 「もとにもとれ！」を流す
-        this.audioSource.PlayOneShot(this.audioClip);
+        // ※音声遅延バグあり。
+        //this.audioSource.PlayOneShot(this.audioClip);
 
         // コンマ数秒待機
         // ここでEnemyの動きが指定秒数止まる
