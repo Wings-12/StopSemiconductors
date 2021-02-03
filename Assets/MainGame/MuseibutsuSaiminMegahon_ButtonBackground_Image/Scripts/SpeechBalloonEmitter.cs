@@ -10,12 +10,12 @@ public class SpeechBalloonEmitter : MonoBehaviour
     /// <summary>
     /// 「もとにもどれ！」吹き出しゲームオブジェクト
     /// </summary>
-    [SerializeField] GameObject speechBalloon_Image;
+    [SerializeField] GameObject speechBalloon_Image = default;
 
     /// <summary>
     /// 無生物催眠メガホンゲームオブジェクト
     /// </summary>
-    [SerializeField] GameObject museibutsuSaiminMegahon_Image;
+    [SerializeField] GameObject museibutsuSaiminMegahon_Image = default;
 
     /// <summary>
     /// WaitForSecondsで待機処理がされているかどうか判定するbool変数

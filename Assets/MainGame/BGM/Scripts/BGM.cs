@@ -8,11 +8,6 @@ using UnityEngine;
 public class BGM : MonoBehaviour
 {
     /// <summary>
-    /// AudioClipのインスタンス
-    /// </summary>
-    [SerializeField] AudioClip audioClip = default;
-
-    /// <summary>
     /// AudioSourceのインスタンス
     /// </summary>
     [SerializeField] AudioSource audioSource = default;
@@ -21,10 +16,10 @@ public class BGM : MonoBehaviour
     void Start()
     {
         // BGMを流す
-        this.audioSource.PlayOneShot(this.audioClip);
+        this.audioSource.Play();
 
         // OnStoppingBGMイベントにOnStoppingBGMEventHandlerを設定
-        //this.enemyController.OnStoppingBGM += OnStoppingBGMEventHandler;
+        GameEnd.OnStoppingBGM += StopBGM;
     }
 
     /// <summary>
@@ -32,7 +27,7 @@ public class BGM : MonoBehaviour
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    void OnStoppingBGMEventHandler(object sender, System.EventArgs e)
+    void StopBGM(object sender, System.EventArgs e)
     {
         this.audioSource.Stop();
     }

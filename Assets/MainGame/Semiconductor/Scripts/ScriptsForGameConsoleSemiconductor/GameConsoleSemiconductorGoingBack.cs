@@ -8,22 +8,22 @@ public class GameConsoleSemiconductorGoingBack : MonoBehaviour
     /// <summary>
     /// 半導体の戻り先の電子機器
     /// </summary>
-    [SerializeField] GameObject electronics;
+    [SerializeField] GameObject electronics = default;
 
     /// <summary>
     /// 半導体の「！」テキスト
     /// </summary>
-    [SerializeField] Text exclamationMark_Text;
+    [SerializeField] Text exclamationMark_Text = default;
 
     /// <summary>
     /// 半導体を元に戻した場合に切り替えるスプライト
     /// </summary>
-    [SerializeField] Sprite changingSprite;
+    [SerializeField] Sprite changingSprite = default;
 
     ///<summary>
     ///半導体のrigidbody
     ///</summary>
-    [SerializeField] Rigidbody2D semiconductorRigidbody2D;
+    [SerializeField] Rigidbody2D semiconductorRigidbody2D = default;
 
     /// <summary>
     /// WaitForSecondsで待機処理がされているかどうか判定するbool変数
