@@ -5,27 +5,27 @@ using UnityEngine;
 using UnityEngine.UI; // touch.phaseデバッグのため臨時で入れた。 2020/09/08
 
 /// <summary>
-/// 画面上の無生物催眠メガホンをタッチ操作で移動できるクラス
+/// 画面上の元に戻す機をタッチ操作で移動できるクラス
 /// </summary>
-public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
+public class GoBackToNormalMachineMoving : MonoBehaviour
 {
     #region フィールド
     ///<summary>
-    ///無生物催眠メガホンのrigidbody
+    ///元に戻す機のrigidbody
     ///</summary>
     protected Rigidbody2D rigidbody2D;
 
     ///<summary>
-    ///無生物催眠メガホンを描画する座標(1マス右側に描画されている無生物催眠メガホンの移動先座標)
+    ///元に戻す機を描画する座標(1マス右側に描画されている元に戻す機の移動先座標)
     ///</summary>
     protected Vector2 drawingPosition;
 
     ///<summary>
-    ///無生物催眠メガホンの移動スピード
+    ///元に戻す機の移動スピード
     ///</summary>
     protected float characterSpeed;
 
-    readonly Vector2 positionToMake_drawingPosition = new Vector2(2.5f, 0.0f);
+    readonly Vector2 positionToMake_drawingPosition = new Vector2(3.0f, 0.0f);
     #endregion
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
     }
 
     /// <summary>
-    /// 機能：無生物催眠メガホンをスマホタッチ操作で移動する
+    /// 機能：元に戻す機をスマホタッチ操作で移動する
     /// 
     /// 引数：なし
     /// 
@@ -59,7 +59,7 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
     /// 備考：参考サイト：忘れた。
     protected void MoveCharacter()
     {
-        // ここに無生物催眠メガホンのボタンを押したときは無生物催眠メガホンを移動しないように条件文を追加する
+        // ここに元に戻す機のボタンを押したときは元に戻す機を移動しないように条件文を追加する
         if (Input.touchCount > 0)
         {
             // 移動方向(°)
@@ -67,13 +67,13 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
             moveAngle = GetAngleOf_moveDestination(this.transform.position, this.drawingPosition);
             //moveAngle = GetAngleOf_moveDestination(this.transform.position, this.touchPosition + new Vector2(1.6f, 0.0f, 0.0f));
 
-            // 移動方向に対して無生物催眠メガホンを動かす
+            // 移動方向に対して元に戻す機を動かす
             SetVelocityForRigidbody2D(moveAngle, characterSpeed);
         }
     }
 
     /// <summary>
-    /// 機能：無生物催眠メガホンの移動先のタッチした座標をフレーム毎に更新する
+    /// 機能：元に戻す機の移動先のタッチした座標をフレーム毎に更新する
     /// 
     /// 引数：なし
     /// 
@@ -90,7 +90,7 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
             // タッチ座標を更新
             Vector2 touchPosition = (Vector2)Camera.main.ScreenToWorldPoint(touch.position);
 
-            // 無生物催眠メガホンのボタンの左上の角のx座標より左の領域をタッチした場合
+            // 元に戻す機のボタンの左上の角のx座標より左の領域をタッチした場合
             if (touchPosition.x < 7.3f)
             {
                 // 描画座標を更新
@@ -100,7 +100,7 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
     }
 
     /// <summary>
-    /// 機能：無生物催眠メガホンをタッチした位置に近づいたら止める
+    /// 機能：元に戻す機をタッチした位置に近づいたら止める
     /// 
     /// 引数：なし
     /// 
@@ -112,7 +112,7 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
         // タッチ位置からの差
         float touchDif = 0.5f;
 
-        // 無生物催眠メガホンがタッチ位置を原点とする矩形以内に入った場合
+        // 元に戻す機がタッチ位置を原点とする矩形以内に入った場合
         if ((
             (this.drawingPosition.x - touchDif <= this.transform.position.x) && (this.transform.position.x <= this.drawingPosition.x + touchDif)
             )
@@ -121,20 +121,20 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
             (this.drawingPosition.y - touchDif <= this.transform.position.y) && (this.transform.position.y <= this.drawingPosition.y + touchDif)
             ))
         {
-            // 無生物催眠メガホンの位置をタッチ位置の右側に設定する
-            // 理由：無生物催眠メガホンがタッチ位置と被らないようにするため
+            // 元に戻す機の位置をタッチ位置の右側に設定する
+            // 理由：元に戻す機がタッチ位置と被らないようにするため
             this.transform.position = this.drawingPosition;
 
-            // 無生物催眠メガホンの動きを停止する
+            // 元に戻す機の動きを停止する
             this.rigidbody2D.velocity = Vector2.zero;
         }
     }
 
     /// <summary>
-    /// 機能：現在の無生物催眠メガホンの座標から移動先の座標への角度を求める
+    /// 機能：現在の元に戻す機の座標から移動先の座標への角度を求める
     /// 
     /// 引数：
-    /// 引数1：現在の無生物催眠メガホンの座標
+    /// 引数1：現在の元に戻す機の座標
     /// 引数2：移動先の座標
     /// 
     /// 戻り値：2点の角度(°)
@@ -160,8 +160,8 @@ public class MuseibutsuSaiminMegahonMoving : MonoBehaviour
     /// 機能：ゲームオブジェクトにアタッチされたRigidbody2D速度を設定する
     /// 
     /// 引数：
-    /// 引数1：現在の無生物催眠メガホンの座標から移動先の座標への角度
-    /// 引数2：無生物催眠メガホンの移動スピード
+    /// 引数1：現在の元に戻す機の座標から移動先の座標への角度
+    /// 引数2：元に戻す機の移動スピード
     /// 
     /// 戻り値：なし
     /// 

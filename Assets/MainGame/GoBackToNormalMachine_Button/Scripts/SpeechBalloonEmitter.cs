@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 無生物催眠メガホンボタンが押下されたら、「もとにもどれ！」吹き出しを出すクラス
+/// 元に戻す機ボタンが押下されたら、「もとにもどれ！」吹き出しを出すクラス
 /// </summary>
 public class SpeechBalloonEmitter : MonoBehaviour
 {
@@ -13,9 +13,9 @@ public class SpeechBalloonEmitter : MonoBehaviour
     [SerializeField] GameObject speechBalloon_Image = default;
 
     /// <summary>
-    /// 無生物催眠メガホンゲームオブジェクト
+    /// 元に戻す機ゲームオブジェクト
     /// </summary>
-    [SerializeField] GameObject museibutsuSaiminMegahon_Image = default;
+    [SerializeField] GameObject goBackToNormalMachine_Image_Image = default;
 
     /// <summary>
     /// WaitForSecondsで待機処理がされているかどうか判定するbool変数
@@ -61,8 +61,8 @@ public class SpeechBalloonEmitter : MonoBehaviour
         // 何度もUpdateメソッドの中でStartCoroutine(CoroutineMoveEnemyAtRandom());を呼ばないようにする
         this.isWaitForSeconds = true;
 
-        // 「もとにもとれ！」メッセージボックスの座標を無生物催眠メガホンの右隣に描画されるように設定
-        this.speechBalloon_Image.transform.position = (Vector2)museibutsuSaiminMegahon_Image.transform.position + new Vector2(3.7f, 0.0f);
+        // 「もとにもとれ！」メッセージボックスの座標を元に戻す機の右隣に描画されるように設定
+        this.speechBalloon_Image.transform.position = (Vector2)goBackToNormalMachine_Image_Image.transform.position + new Vector2(3.7f, 0.0f);
 
         // 非アクティブにしてた「もとにもとれ！」メッセージボックスをアクティブに設定
         this.speechBalloon_Image.SetActive(true);

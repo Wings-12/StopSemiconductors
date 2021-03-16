@@ -390,7 +390,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b6767b215b6b301469bc3f45470366d3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.278
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 250821021}
   - component: {fileID: 250821022}
   m_Layer: 5
-  m_Name: MuseibutsuSaiminMegahon_Image
+  m_Name: GoBackToNormalMachine_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb4d9d32d26cc9942a429f50e4049be6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f54e144f639f7947abcb7ea0e46faf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -835,7 +835,7 @@ GameObject:
   - component: {fileID: 368976988}
   - component: {fileID: 368976987}
   m_Layer: 5
-  m_Name: MuseibutsuSaiminMegahon_Button
+  m_Name: GoBackToNormalMachine_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f6150e52aac5da043b3cc9633e55b3a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fea79ba8475849e429609ea830824030, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speechBalloon_Image: {fileID: 275262236}
-  museibutsuSaiminMegahon_Image: {fileID: 250821017}
+  goBackToNormalMachine_Image_Image: {fileID: 250821017}
   audioClip: {fileID: 8300000, guid: 1dadaf0bc3c7225458e304724df11504, type: 3}
   audioSource: {fileID: 368976988}
 --- !u!82 &368976988
@@ -1437,7 +1437,7 @@ GameObject:
   - component: {fileID: 671073882}
   - component: {fileID: 671073881}
   m_Layer: 5
-  m_Name: MuseibutsuSaiminMegahon_ButtonBackground_Image
+  m_Name: GoBackToNormalMachine_ButtonBackground_Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 867dcc2de88773a418b9aa94f3cdc560, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b331384f0a859b54a899c6b0e747d6f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1921,7 +1921,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dddfa8695d82f74428a1b658231e7de8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.221
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2188,7 +2188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1938871720
 RectTransform:
   m_ObjectHideFlags: 0
